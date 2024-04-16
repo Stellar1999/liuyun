@@ -18,7 +18,7 @@ public class LogStep extends AbstractStep {
     }
 
     @Override
-    public void execute(RuntimeContext runtimeContext) {
-        logger.info(text);
+    protected void run(RuntimeContext runtimeContext) {
+        logger.info(this.text);
     }
 }

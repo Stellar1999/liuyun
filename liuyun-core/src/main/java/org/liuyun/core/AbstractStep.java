@@ -17,6 +17,15 @@ public abstract class AbstractStep implements Serializable, Step {
         this.id = id;
     }
 
+    @Override
+    public void execute(RuntimeContext runtimeContext) {
+        run(runtimeContext);
+        for (Step nextStep : this.getNext()){
+            nextStep.execute(runtimeContext);
+        }
+    }
+
+    protected abstract void run(RuntimeContext runtimeContext);
 
     public List<Step> getPrev() {
         return prev;
