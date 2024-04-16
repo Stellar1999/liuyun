@@ -1,0 +1,21 @@
+{
+  "trigger": {
+    "type": "cron",
+    "begin_time": "2024-1-5 00:00:00",
+    "end_time": "2024-1-6 00:00:00",
+    "delay": 1
+  },
+  "steps": [
+    {
+      "id": "step1",
+      "type": "log",
+      "text": "log1 text",
+      "next": ["step2"]
+    },
+    {
+      "id": "step2",
+      "type": "log",
+      "text": "log2 text"
+    }
+  ]
+}
