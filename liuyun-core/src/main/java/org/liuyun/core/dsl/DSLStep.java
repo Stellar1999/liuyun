@@ -1,9 +1,8 @@
 package org.liuyun.core.dsl;
 
-import org.liuyun.core.LogStep;
-import org.liuyun.core.Step;
-
 import java.util.List;
+import org.liuyun.core.step.LogStep;
+import org.liuyun.core.step.Step;
 
 public class DSLStep {
 
@@ -27,15 +26,15 @@ public class DSLStep {
      */
     private String text;
 
-    protected Step build(){
-        switch (type){
+    protected Step build() {
+        switch (type) {
             case LogStep.TYPE_NAME:
                 return buildLogStep();
         }
         throw new IllegalArgumentException("找不到DSL描述的Step-Type");
     }
 
-    private LogStep buildLogStep(){
+    private LogStep buildLogStep() {
         return new LogStep(id, text);
     }
 

@@ -1,4 +1,4 @@
-package org.liuyun.core;
+package org.liuyun.core.trigger;
 
 public interface Trigger {
 

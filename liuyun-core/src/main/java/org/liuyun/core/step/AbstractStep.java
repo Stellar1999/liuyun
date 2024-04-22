@@ -1,6 +1,6 @@
-package org.liuyun.core;
+package org.liuyun.core.step;
 
-import com.alibaba.fastjson2.JSONObject;
+import org.liuyun.core.RuntimeContext;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,14 +13,14 @@ public abstract class AbstractStep implements Serializable, Step {
 
     private List<Step> next = new ArrayList<>();
 
-    public AbstractStep(String id){
+    public AbstractStep(String id) {
         this.id = id;
     }
 
     @Override
     public void execute(RuntimeContext runtimeContext) {
         run(runtimeContext);
-        for (Step nextStep : this.getNext()){
+        for (Step nextStep : this.getNext()) {
             nextStep.execute(runtimeContext);
         }
     }
@@ -30,6 +30,7 @@ public abstract class AbstractStep implements Serializable, Step {
     public List<Step> getPrev() {
         return prev;
     }
+
     public List<Step> getNext() {
         return next;
     }
@@ -37,9 +38,8 @@ public abstract class AbstractStep implements Serializable, Step {
     public void setPrev(List<Step> prev) {
         this.prev = prev;
     }
+
     public void setNext(List<Step> next) {
         this.next = next;
     }
-
-
 }

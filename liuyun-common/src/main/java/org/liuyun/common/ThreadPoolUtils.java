@@ -1,4 +1,4 @@
-package org.liuyun.core;
+package org.liuyun.common;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -9,5 +9,4 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class ThreadPoolUtils {
 
     public static final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(10);
-
 }

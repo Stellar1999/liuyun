@@ -26,7 +26,6 @@
     -->
     <logger name="logTest" additivity="false">
         <level value ="INFO"/>
-        <appender-ref ref="dailyRollingAppender"/>
     </logger>
 
 

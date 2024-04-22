@@ -1,8 +1,8 @@
 package org.liuyun.core.dsl;
 
-import org.liuyun.core.CronTrigger;
-import org.liuyun.core.Processor;
-import org.liuyun.core.Trigger;
+import org.liuyun.core.trigger.CronTrigger;
+import org.liuyun.core.processor.Processor;
+import org.liuyun.core.trigger.Trigger;
 
 public class DSLTrigger {
 
@@ -14,15 +14,15 @@ public class DSLTrigger {
 
     private Long delay;
 
-    public Trigger build(Processor processor){
-        switch (type){
+    public Trigger build(Processor processor) {
+        switch (type) {
             case CronTrigger.type:
                 return buildCronTrigger(processor);
         }
         throw new IllegalArgumentException("找不到DSL描述的Trigger-Type");
     }
 
-    private Trigger buildCronTrigger(Processor processor){
+    private Trigger buildCronTrigger(Processor processor) {
         return new CronTrigger(processor, this.delay);
     }
 

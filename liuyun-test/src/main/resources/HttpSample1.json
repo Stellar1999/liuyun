@@ -1,9 +1,7 @@
 {
   "trigger": {
-    "type": "cron",
-    "begin_time": "2024-1-5 00:00:00",
-    "end_time": "2024-1-6 00:00:00",
-    "delay": 1
+    "type": "http",
+    "path": "/http/sample1"
   },
   "steps": [
     {
@@ -17,10 +15,6 @@
       "type": "log",
       "text": "log2 text",
       "next": ["step3"]
-    },
-    {
-      "id": "step3",
-      "type": "http"
     }
   ]
 }

@@ -8,13 +8,13 @@ public class Express {
 
     private List<String> tokens;
 
-    public Express(String expressString){
+    public Express(String expressString) {
         validate(expressString);
-        //TODO 拆分语法单元
+        // TODO 拆分语法单元
     }
 
-    private void validate(String expressString){
-        //TODO: 检查表达式是否合法
+    private void validate(String expressString) {
+        // TODO: 检查表达式是否合法
     }
 
     public String getOp() {
@@ -32,7 +32,4 @@ public class Express {
     public void setTokens(List<String> tokens) {
         this.tokens = tokens;
     }
-
-
-
 }
